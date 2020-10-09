@@ -1,0 +1,1065 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: goldenrod;
+  --secondary-color: #67fec8;
+  --highlight-color: whitesmoke;
+  --light-color: #fff;
+  --dark-color: #090908;
+  --font: Ovo, serif;
+  --mix-color: #678ffe;
+  --overlay-color: gainsboro;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 1rem 0;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 0.8rem;
+  line-height: 2;
+}
+
+input,
+textarea,
+button {
+  font-family: var(--font);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 3rem;
+  min-height: 25vh;
+  margin: 0 auto;
+}
+
+/* Header Area */
+header {
+  background-color: var(--dark-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  padding: 2rem;
+  top: 0;
+}
+
+header #logo img {
+  width: 100px;
+  height: 70px;
+}
+
+header nav ul {
+  position: relative;
+}
+
+header nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+header nav .btn-drop {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+header nav .dropdown {
+  display: inline-block;
+}
+
+header nav .btn-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: var(--dark-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px var(--dark-color);
+  z-index: 1;
+}
+
+header nav .btn-content a {
+  color: var(--primary-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header nav .btn-content a:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+header nav .dropdown:hover .btn-content {
+  display: block;
+}
+
+header nav .btn-content a i img {
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+  box-shadow: 0 0 1px var(--dark-color);
+}
+
+header nav #hamIcon span {
+  display: none;
+  color: var(--primary-color);
+}
+
+/*Hero banner Area*/
+.hero-banner {
+  background: url("//picsum.photos/200/300?random=2") no-repeat fixed center
+    center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-banner::after {
+  background-color: var(--secondary-color);
+}
+
+.hero-banner span {
+  color: var(--primary-color);
+}
+
+main .hero-banner h1 {
+  text-align: center;
+  color: var(--highlight-color);
+  font-size: 4.5rem;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+/*Past Area*/
+main #work {
+  background-color: var(--highlight-color);
+}
+
+main #work .cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+main #work .card {
+  background-color: var(--light-color);
+  width: 32%;
+  padding: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 0 5px var(--dark-color);
+}
+
+main #work .card:hover {
+  box-shadow: 0 0 25px var(--dark-color);
+}
+
+main #work .card img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+main #work .card a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/*Present Area*/
+main #experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--light-color);
+}
+
+main #experience img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+main #experience .exp-content {
+  padding: 1rem;
+}
+
+/*Skills Area*/
+main #skills {
+  background: url("//picsum.photos/200/300?random=2") no-repeat fixed center
+    center/cover;
+  padding: 3rem;
+}
+
+main #skills .container {
+  background-color: var(--light-color);
+}
+
+main #skills .skill-cards {
+  display: flex;
+}
+
+main #skills .skill-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  margin-right: 1rem;
+  border-radius: 2px;
+  border: 2px solid var(--highlight-color);
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+main #skills .skill-card:nth-child(odd) {
+  background-color: var(--mix-color);
+}
+
+main #skills .skill-card:nth-child(even) {
+  background-color: var(--light-color);
+}
+
+main #skills .skill-card progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--primary-color);
+}
+progress[value]::-webkit-progress-bar {
+  background-color: var(--light-color);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px var(--dark-color) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px var(--dark-color) inset;
+}
+
+#skills .skill-cards .skill-card img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+/* Gallery codes */
+#gallery {
+  background-color: var(--light-color);
+  margin-top: 8rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 1rem;
+}
+
+.pm {
+  min-height: 100px;
+}
+
+.gridImg {
+  width: 100%;
+  height: 100%;
+  transition: opacity 250ms linear;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gridImg:hover {
+  background-color: var(--secondary-color);
+  opacity: 0.7;
+}
+
+.grid1 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 4;
+}
+
+.grid1:hover {
+  transform: rotate(15deg);
+}
+
+.grid2 {
+  grid-column: 5 / span 2;
+}
+
+.grid2:hover {
+  transform: scale(2, 2);
+}
+
+.grid3 {
+  grid-column: 5 / span 2;
+}
+
+.grid3:hover {
+  transform: rotate(90deg);
+}
+
+.grid4 {
+  grid-column: 7 / span 3;
+  grid-row: 1 / span 3;
+}
+
+.grid4:hover {
+  transform: rotate(90deg);
+}
+
+.grid5 {
+  grid-column: 1 / span 2;
+}
+
+.grid6 {
+  grid-column: 1 / span 2;
+}
+.grid7 {
+  grid-column: 1 / span 2;
+}
+
+.grid8 {
+  grid-column: 3 / span 4;
+  grid-row: 3 / span 3;
+}
+
+.grid9 {
+  grid-column: 7 / span 3;
+  grid-row: 4 / span 5;
+}
+
+.grid9:hover {
+  transform: rotate(90deg);
+}
+
+.grid10 {
+  grid-column: 1 / span 6;
+  grid-row: 6 / span 3;
+}
+
+/*Animation Page*/
+#animation {
+  background-color: var(--light-color);
+  margin-top: 8rem;
+  height: 100vh;
+}
+
+#animation .ani-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+#animation .grid1 {
+  width: 400px;
+  height: 300px;
+  animation-name: grid1Anim;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#animation .grid1 img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes grid1Anim {
+  0% {
+    top: 0;
+    left: 0;
+    transform: translate(100px, 100px);
+  }
+  25% {
+    top: 0;
+    left: 0;
+    transform: translate(100px);
+  }
+}
+
+#animation .grid2 {
+  width: 400px;
+  height: 300px;
+  animation-name: grid2Anim;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#animation .grid2 img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes grid2Anim {
+  50% {
+    bottom: 0;
+    right: 0;
+    transform: translate(100px, 100px);
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+    transform: translate(100px);
+  }
+}
+
+/*Footer Area*/
+footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+  margin: 3rem;
+  text-align: center;
+}
+
+footer form .form-input {
+  margin: 2rem 0;
+}
+
+footer form .form-input label {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+footer form .form-input input,
+footer form .form-input textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+footer form button {
+  background-color: var(--primary-color);
+  border-bottom-right-radius: 5px;
+  border: none;
+  padding: 1rem 2rem;
+  color: var(--light-color);
+  font-size: inherit;
+  width: 200px;
+}
+
+footer form button:hover {
+  color: var(--mix-color);
+  background-color: var(--secondary-color);
+}
+
+footer #goto-top {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  opacity: 0.5;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+footer #goto-top span {
+  font-size: 1.2rem;
+  color: var(--light-color);
+}
+
+/* Mobile Version */
+
+@media (max-width: 992px) {
+  html,
+  body {
+    font-size: 14;
+    overflow-x: hidden;
+  }
+  header nav #hamIcon span {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+  }
+
+  header nav ul.hide {
+    display: block;
+  }
+
+  header nav .dropdown {
+    display: block;
+  }
+
+  header nav a {
+    display: block;
+    padding: 1rem;
+  }
+
+  header nav a:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+  }
+
+  header nav .btn-content {
+    display: none;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* hero banner */
+  main .hero-banner h1 {
+    text-align: center;
+    color: var(--highlight-color);
+    font-size: 2.5rem;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  /* Work Area */
+  main #work .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  main #work .card {
+    background-color: var(--light-color);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 2px;
+  }
+
+  /* Experience Area */
+  main #experience {
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--light-color);
+  }
+
+  main #experience img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main #experience .exp-content {
+    padding: 3rem;
+  }
+
+  /* Skills Area */
+  main #skills .skill-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+
+  main #skills .skill-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 30%;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  main #skills .skill-card progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--primary-color);
+    width: 150px;
+  }
+  /* Animation */
+
+  #animation {
+    height: 100vh;
+  }
+
+  #animation .ani-container {
+    display: block;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  footer form .form-input label {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 14;
+    overflow-x: hidden;
+  }
+
+  header nav #hamIcon span {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+  }
+
+  header nav ul.hide {
+    display: block;
+  }
+
+  header nav .dropdown {
+    display: block;
+  }
+
+  header nav a {
+    display: block;
+    padding: 1rem;
+  }
+
+  header nav a:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+  }
+
+  header nav .btn-content {
+    display: none;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* hero banner */
+  main .hero-banner h1 {
+    text-align: center;
+    color: var(--highlight-color);
+    font-size: 2.5rem;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  main .hero-banner {
+    height: 85vh;
+  }
+
+  /* Work Area */
+  main #work .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  main #work .card {
+    background-color: var(--light-color);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 2px;
+  }
+
+  /* Experience Area */
+  main #experience {
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--light-color);
+  }
+
+  main #experience img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main #experience .exp-content {
+    padding: 3rem;
+  }
+
+  /* Skills Area */
+  main #skills .skill-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+
+  main #skills .skill-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 30%;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  main #skills .skill-card progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--primary-color);
+    width: 150px;
+  }
+
+  #animation {
+    height: 80vh;
+  }
+
+  #animation .ani-container {
+    display: block;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  footer form .form-input label {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 572px) {
+  html,
+  body {
+    font-size: 14;
+    overflow-x: hidden;
+  }
+
+  header nav #hamIcon span {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+  }
+
+  header nav ul.hide {
+    display: block;
+  }
+
+  header nav .dropdown {
+    display: block;
+  }
+
+  header nav a {
+    display: block;
+    padding: 1rem;
+  }
+
+  header nav a:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+  }
+
+  header nav .btn-content {
+    display: none;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* hero banner */
+  main .hero-banner {
+    height: 85vh;
+  }
+
+  main .hero-banner h1 {
+    text-align: center;
+    color: var(--highlight-color);
+    font-size: 2.5rem;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  /* Work Area */
+  main #work .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  main #work .card {
+    background-color: var(--light-color);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 2px;
+  }
+
+  /* Experience Area */
+  main #experience {
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--light-color);
+  }
+
+  main #experience img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main #experience .exp-content {
+    padding: 3rem;
+  }
+
+  /* Skills Area */
+  main #skills .skill-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+
+  main #skills .skill-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 30%;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  main #skills .skill-card progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--primary-color);
+    width: 150px;
+  }
+
+  #animation {
+    height: 80vh;
+  }
+
+  #animation .ani-container {
+    display: block;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  footer form .form-input label {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+  html,
+  body {
+    font-size: 14;
+    overflow-x: hidden;
+  }
+
+  header nav #hamIcon span {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+  }
+
+  header nav ul.hide {
+    display: block;
+  }
+
+  header nav .dropdown {
+    display: block;
+  }
+
+  header nav a {
+    display: block;
+    padding: 1rem;
+  }
+
+  header nav a:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+  }
+
+  header nav .btn-content {
+    display: none;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* hero banner */
+  main .hero-banner h1 {
+    text-align: center;
+    color: var(--highlight-color);
+    font-size: 2.5rem;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  main .hero-banner {
+    height: 70vh;
+  }
+
+  /* Work Area */
+  main #work .container {
+    padding: 2rem;
+  }
+
+  main #work .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  main #work .card {
+    background-color: var(--light-color);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 2px;
+  }
+
+  /* Experience Area */
+  main #experience {
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--light-color);
+  }
+
+  main #experience img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main #experience .exp-content {
+    padding: 1rem;
+  }
+
+  /* Skills Area */
+  main #skills {
+    padding: 1.5rem;
+  }
+
+  main #skills .skill-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+
+  main #skills .skill-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  main #skills .skill-card progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--primary-color);
+    width: 100px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  footer form .form-input label {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #animation {
+    height: 70vh;
+  }
+
+  #animation .ani-container {
+    display: block;
+  }
+  #animation .grid1 {
+    width: 150px;
+    height: 200px;
+  }
+
+  #animation .grid2 {
+    width: 150px;
+    height: 200px;
+  }
+
+  /* Form */
+  footer form {
+    width: 100%;
+  }
+}
